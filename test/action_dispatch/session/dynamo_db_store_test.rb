@@ -32,7 +32,7 @@ module ActionDispatch
 
         store = ActionDispatch::Session::DynamoDbStore.new(nil, options)
         config_file_path = store.config.config_file.to_s
-        assert_match(/aws_dynamo_db_session_store\/development.yml/, config_file_path)
+        assert_match(%r{aws_dynamo_db_session_store/development.yml}, config_file_path)
 
         # Reload old env
         Rails.env = old_env

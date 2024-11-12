@@ -51,6 +51,7 @@ module ActionDispatch
         @middleware.delete_session(req, sid, options)
       end
 
+      # rubocop:disable Metrics
       def config_file
         file = ENV.fetch('AWS_DYNAMO_DB_SESSION_CONFIG_FILE', nil)
         file ||= Rails.root.join("config/dynamo_db_session_store/#{Rails.env}.yml")
@@ -68,6 +69,7 @@ module ActionDispatch
         file if File.exist?(file)
       end
     end
+    # rubocop:enable Metrics
 
     # @api private
     class DynamodbStore < DynamoDbStore
