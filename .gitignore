@@ -1,0 +1,6 @@
+.idea/
+Gemfile.lock
+gemfiles/*.gemfile.lock
+
+test/dummy/db/migrate
+test/dummy/log/
