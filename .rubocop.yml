@@ -14,7 +14,3 @@ Naming/FileName:
   Exclude:
     - 'gemfiles/*.gemfile'
     - 'lib/aws-actiondispatch-dynamodb.rb'
-
-Style/BlockComments:
-  Exclude:
-    - 'spec/spec_helper.rb'

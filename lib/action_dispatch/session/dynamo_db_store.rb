@@ -5,7 +5,7 @@ require 'aws-sessionstore-dynamodb'
 
 module ActionDispatch
   module Session
-    # Uses the Dynamo DB Session Store implementation to create a class that
+    # Uses the DynamoDB Session Store implementation to create a class that
     # extends `ActionDispatch::Session`. Rails will create a `:dynamo_db_store`
     # configuration for `:session_store` from this class name.
     #
