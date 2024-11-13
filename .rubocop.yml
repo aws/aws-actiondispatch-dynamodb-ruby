@@ -1,0 +1,16 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7
+  SuggestExtensions: false
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'gemfiles/*.gemfile'
+    - 'lib/aws-actiondispatch-dynamodb.rb'
