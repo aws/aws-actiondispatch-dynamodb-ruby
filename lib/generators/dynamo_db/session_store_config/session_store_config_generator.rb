@@ -2,6 +2,7 @@
 
 require 'rails/generators'
 
+# @api private
 module DynamoDb
   module Generators
     # Generates a config file for DynamoDB session storage.

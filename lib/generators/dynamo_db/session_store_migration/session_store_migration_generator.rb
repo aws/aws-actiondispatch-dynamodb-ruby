@@ -2,6 +2,7 @@
 
 require 'rails/generators'
 
+# @api private
 module DynamoDb
   module Generators
     # Generates an ActiveRecord migration that creates and deletes a DynamoDB

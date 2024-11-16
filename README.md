@@ -65,7 +65,7 @@ Rails.application.config.session_store :dynamo_db_store, **options
 ```
 
 The session store inherits from the
-[`Rack::Session::Abstract::Persisted`](https://rubydoc.info/github/rack/rack-session/main/Rack/Session/Abstract/Persisted)
+[Rack::Session::Abstract::Persisted](https://rubydoc.info/github/rack/rack-session/main/Rack/Session/Abstract/Persisted)
 class, which also supports additional options (such as `:key`).
 
 For more information about this feature and configuration options, see the
