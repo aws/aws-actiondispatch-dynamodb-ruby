@@ -13,8 +13,10 @@ Gem::Specification.new do |spec|
   spec.license      = 'Apache-2.0'
   spec.files        = Dir['LICENSE', 'CHANGELOG.md', 'VERSION', 'lib/**/*']
 
-  spec.add_dependency('actionpack', '>= 7.1.0')
   spec.add_dependency('aws-sessionstore-dynamodb', '~> 3')
+
+  spec.add_dependency('railties', '>= 7.1.0')
+  spec.add_dependency('actionpack', '>= 7.1.0')
 
   spec.required_ruby_version = '>= 2.7'
 end
