@@ -13,15 +13,13 @@ module ActionDispatch
     # unless otherwise provided.
     #
     # Configuration can also be provided in YAML files from Rails config, either
-    # in `config/dynamo_db_session_store.yml` or `config/dynamo_db_session_store/{Rails.env}.yml`.
+    # in `config/aws_dynamo_db_session_store.yml` or
+    # `config/aws_dynamo_db_session_store/{Rails.env}.yml`.
     # Configuration files that are environment-specific will take precedence.
     #
     # @see https://docs.aws.amazon.com/sdk-for-ruby/aws-sessionstore-dynamodb/api/Aws/SessionStore/DynamoDB/Configuration.html
     class DynamoDbStore < ActionDispatch::Session::AbstractStore
       def initialize(app, options = {})
-        Rails.logger.warn('** Dynamo DB Session Storage no longer lives in aws-sdk-rails. ' \
-                          'To avoid disruption, please add aws-actiondispatch-dynamodb ~> 0 to your Gemfile to ' \
-                          'enable this feature when upgrading to aws-sdk-rails ~> 5. **')
         options[:config_file] ||= config_file
         options[:secret_key] ||= Rails.application.secret_key_base
         @middleware = Aws::SessionStore::DynamoDB::RackMiddleware.new(app, options)
@@ -51,33 +49,11 @@ module ActionDispatch
         @middleware.delete_session(req, sid, options)
       end
 
-      # rubocop:disable Metrics
       def config_file
         file = ENV.fetch('AWS_DYNAMO_DB_SESSION_CONFIG_FILE', nil)
-        file ||= Rails.root.join("config/dynamo_db_session_store/#{Rails.env}.yml")
-        file = Rails.root.join('config/dynamo_db_session_store.yml') unless File.exist?(file)
-        if File.exist?(file)
-          Rails.logger.warn('The dynamo_db_session_store configuration file has been renamed.' \
-                            'Please use aws_dynamo_db_session_store/<Rails.env>.yml or ' \
-                            'aws_dynamo_db_session_store.yml. This will be removed in ' \
-                            'aws-actiondispatch-dynamodb ~> 1')
-        else
-          file = Rails.root.join("config/aws_dynamo_db_session_store/#{Rails.env}.yml")
-          file = Rails.root.join('config/aws_dynamo_db_session_store.yml') unless File.exist?(file)
-        end
-
+        file = Rails.root.join("config/aws_dynamo_db_session_store/#{Rails.env}.yml") unless file
+        file = Rails.root.join('config/aws_dynamo_db_session_store.yml') unless File.exist?(file)
         file if File.exist?(file)
-      end
-    end
-    # rubocop:enable Metrics
-
-    # @api private
-    class DynamodbStore < DynamoDbStore
-      def initialize(app, options = {})
-        Rails.logger.warn('** Session Store :dynamodb_store configuration key has been renamed to :dynamo_db_store, ' \
-                          'please use the new key instead. The :dynamodb_store key name will be removed in ' \
-                          'aws-actiondispatch-dynamodb ~> 1 **')
-        super
       end
     end
   end
