@@ -7,8 +7,6 @@ Unreleased Changes
 
 * Issue - Drop support for the `:dynamodb_store` configuration name.
 
-* Feature - Bump `aws-sessionstore-dynamodb` dependency to `~> 3`.
-
 0.1.0 (2024-11-16)
 ------------------
 
