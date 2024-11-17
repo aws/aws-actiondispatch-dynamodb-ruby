@@ -1,6 +1,8 @@
 Unreleased Changes
 ------------------
 
+* Issue - Bump `aws-sessionstore-dynamodb` version to `~> 3` to fix private method calling.
+
 0.1.0 (2024-11-16)
 ------------------
 
