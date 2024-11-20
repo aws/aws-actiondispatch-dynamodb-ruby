@@ -1,6 +1,6 @@
 # ActionDispatch Session Storage with Amazon DynamoDB
 
-[![Gem Version](https://badge.fury.io/rb/aws-actiondispatch-dynamodb-ruby.svg)](https://badge.fury.io/rb/aws-actiondispatch-dynamodb-ruby)
+[![Gem Version](https://badge.fury.io/rb/aws-actiondispatch-dynamodb.svg)](https://badge.fury.io/rb/aws-actiondispatch-dynamodb)
 [![Build Status](https://github.com/aws/aws-actiondispatch-dynamodb-ruby/workflows/CI/badge.svg)](https://github.com/aws/aws-actiondispatch-dynamodb-ruby/actions)
 [![Github forks](https://img.shields.io/github/forks/aws/aws-actiondispatch-dynamodb-ruby.svg)](https://github.com/aws/aws-actiondispatch-dynamodb-ruby/network)
 [![Github stars](https://img.shields.io/github/stars/aws/aws-actiondispatch-dynamodb-ruby.svg)](https://github.com/aws/aws-actiondispatch-dynamodb-ruby/stargazers)
