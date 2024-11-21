@@ -1,4 +1,4 @@
-Unreleased Changes
+1.0.0 (2024-11-21)
 ------------------
 
 * Feature - [Major Version] Bump major version to 1.0.0.
