@@ -15,8 +15,8 @@ to sessions from other applications and devices.
 Add this gem to your Rails project's Gemfile:
 
 ```ruby
-gem 'aws-sdk-rails', '~> 4'
-gem 'aws-actiondispatch-dynamodb', '~> 0'
+gem 'aws-sdk-rails', '~> 5'
+gem 'aws-actiondispatch-dynamodb', '~> 1'
 ```
 
 Then run `bundle install`.
