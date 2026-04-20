@@ -23,7 +23,8 @@ group :development do
 end
 
 group :test do
-  gem 'minitest', '~> 5.27' # minitest 6+ requires ruby 3.2+, remove when ruby 2.7-3.1 support is dropped
+  # minitest 6+ requires ruby 3.2+, remove when ruby 2.7-3.1 support is dropped
+  gem 'minitest', '~> 5.27' if RUBY_VERSION >= '3.2'
   gem 'minitest-spec-rails'
 end
 
