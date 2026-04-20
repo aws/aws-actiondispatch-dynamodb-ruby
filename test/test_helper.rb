@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
+require 'minitest/mock'
 require 'minitest-spec-rails'
 
 ENV['RAILS_ENV'] = 'test'

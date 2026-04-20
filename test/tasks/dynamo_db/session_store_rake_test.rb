@@ -29,7 +29,7 @@ module DynamoDb
           Aws::SessionStore::DynamoDB::Table
         end
 
-      mock = MiniTest::Mock.new
+      mock = Minitest::Mock.new
       # After removing ENV["MT_KWARGS_HAC\K"], this can be stronger by asserting
       # Rails.application.config.session_options is passed to the method.
       mock.expect(:call, nil, [Hash])
